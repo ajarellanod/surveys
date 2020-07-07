@@ -11,34 +11,22 @@
 			<!-- Encuestado -->
 			<span class="slide">
 				<a href="#" id="icono">
-					<svg width="30" height="30">
-						<path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
-						<path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
-						<path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
-					</svg>
+					<video width="40" height="40" autoplay>
+					    <source src="/survey/views/media/Ujap.mov" type="video/mp4">
+					</video>
 					<font style="margin-left:10px;position:absolute;top:22px;">Survey's</font>
 				</a>
 			</span>
 
 			<ul class="navbar-nav">
 				<li><a href="/survey/logout/">&#128075;Cerrar Sesión</a></li>
-				<li><a href="#">&#128102;<?php echo $_SESSION['logged']; ?></a></li>
+				<li><a href="#" title="Usuario en Sesión">&#128102;<?php echo $_SESSION['logged']; ?></a></li>
 				<!-- <li><a href="#">Realizar Encuesta</a></li>
 				<li><a href="#">Crear Encuesta</a></li> 
 				<li><a href="#">&#128196;Historial de Encuestas Creadas</a></li>-->
 			</ul>
 			<!-- Encuestado -->
 		</nav>
-
-		<div id="main">
-			<h2>Bienvenido a Survey's</h2>
-			<br><hr>
-			<div style="margin:2em auto;width:75%;">
-				<a href="#" id="myBtn2" class="btn" style="padding:2em;">&#128221;Crear Encuesta</a>
-				<a id="myBtn" href="#" class="btn" style="padding:2em; margin-top:1em">&#128209;Realizar Encuesta</a>
-			</div>
-			<br>
-		</div>
 
 		<!-- The Modal -->
 		<div id="myModal" class="modal">
@@ -91,7 +79,7 @@
 
 				echo "
 					<div class='main'>
-							<h2>Creación de Encuesta</h2>
+							<h2>&#128221;Creación de Encuesta</h2>
 							<br><hr>
 
 							<form action='#' method='post'>
@@ -149,8 +137,18 @@
 			}
 		?>
 
+		<div id="main">
+			<h2>Bienvenido a Survey's</h2>
+			<br><hr>
+			<div style="margin:2em auto;width:75%;">
+				<a href="#" id="myBtn2" class="btn" style="padding:2em;">&#128221;Crear Encuesta</a>
+				<a id="myBtn" href="#" class="btn" style="padding:2em; margin-top:1em">&#128209;Realizar Encuesta</a>
+			</div>
+			<br>
+		</div>
+
 		<div class="footer" style="margin-top:230px;">
-			<br><p>Creado por Alexander Arellano & Victor Rivas</p>
+			<br><p>Made with &#129505;</p>
 		</div>
 
 		<script type="text/javascript">

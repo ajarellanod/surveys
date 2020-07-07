@@ -9,13 +9,11 @@
 	<body>
 		<nav class="navbar">
 			<!-- Encuestado -->
-			<span class="slide">
+			<span class="slide" style="background: black;">
 				<a href="/survey" id="icono">
-					<svg width="30" height="30">
-						<path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
-						<path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
-						<path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
-					</svg>
+					<video width="40" height="40" autoplay>
+					    <source src="/survey/views/media/Ujap.mov" type="video/mp4">
+					</video>
 					<font style="margin-left:10px;position:absolute;top:22px;">Survey's</font>
 				</a>
 			</span>
@@ -28,7 +26,7 @@
 		</nav>
 
 		<div id="main">
-			<h2>Registro de Usuario</h2>
+			<h2>&#128236;Registro de Usuario</h2>
 			<?php 
 				//Mostrar Alert
 				if (isset($is_registered)) {
@@ -60,7 +58,7 @@
 		</div>
 
 		<div class="footer">
-			<br><p>Creado por Alexander Arellano & Victor Rivas</p>
+			<br><p>Made with &#129505;</p>
 		</div>
 	</body>
 </html>

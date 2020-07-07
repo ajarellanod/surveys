@@ -48,6 +48,7 @@
 					echo "<h2>$actual_question</h2>";
 				}
 			?>
+			<br><hr>
 			<form action="#" method="post" class="formulario">
 				<div class="radio">
 					<?php
@@ -77,8 +78,8 @@
 			</form>
 		</div>
 
-		<div class="footer">
-			<br><p>Creado por Alexander Arellano & Victor Rivas</p>
+		<div class="footer" style="margin-top:230px;">
+			<br><p>Made with &#129505;</p>
 		</div>
 
 		<script type="text/javascript">

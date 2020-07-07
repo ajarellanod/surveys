@@ -7,7 +7,15 @@
 	{
 
 		public static function get()
-		{
+		{	
+			//Si esta logeado lo enviamos a Index
+			session_start();
+			if(isset($_SESSION["logged"])){
+				header('Location: /survey/index/');
+				exit();
+			}
+
+			//Sino Renderizamos el Login
 			self::render('login');
 		}
 
