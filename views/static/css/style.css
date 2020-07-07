@@ -1,0 +1,301 @@
+*{
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	margin: 0;
+	padding: 0;
+    font-family: monospace;
+}
+
+body {
+	margin: 0;
+	font-family: "Arial";
+	background-color: #f4f4f4;
+	justify-content: center;
+}
+
+.navbar {
+	background-color: #0074D9;
+	overflow: hidden;
+	height:63px;
+	-webkit-box-shadow: 0px 5px 8px -5px rgba(33,33,33,1);
+	-moz-box-shadow: 0px 5px 8px -5px rgba(33,33,33,1);
+	box-shadow: 0px 5px 8px -5px rgba(33,33,33,1);
+}
+
+.navbar a{
+	float: right;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+.navbar ul{
+	margin: 8px 0 0 0;
+	list-style: none;
+}
+
+#icono{
+	float: left !important;
+	padding: 16px 16px !important;
+}
+
+#icono:hover{
+	background-color: #0074D9 !important;
+}
+
+.navbar a:hover{
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.5s ease;
+}
+
+.side-nav{
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #003559;
+	overflow-x:hidden;
+	padding-top: 60px;
+	transition: 0.3s;
+	-webkit-box-shadow: 10px 0px 23px -9px rgba(33,33,33,1);
+	-moz-box-shadow: 10px 0px 23px -9px rgba(33,33,33,1);
+	box-shadow: 10px 0px 23px -9px rgba(33,33,33,1);
+}
+
+.side-nav a{
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	font-size: 15px;
+	color: #B9D6F2;
+	display: block;
+	transition: 0.3s;
+}
+
+.side-nav a:hover{
+	color: #fff;
+}
+
+.side-nav .btn-close{
+	position: absolute;
+	top: 0;
+	right: 8px;
+	font-size: 36px;
+	margin-left: 57px;
+	margin-top: 2px;
+}
+
+.side-nav .title{
+	position: absolute;
+	top: 0;
+	font-size: 24px;
+	margin-left: 30px;
+	margin-top: 8px;
+}
+
+#main{
+	transition: margin-left 0.5s;
+	padding: 20px;
+	overflow: hidden;
+	width: 50%;
+	max-width: 1000px;
+	margin: auto;
+	margin-top: 4em;
+	margin-bottom: 8em;
+	-webkit-box-shadow: 0px 6px 25px -10px rgba(33,33,33,1);
+	-moz-box-shadow: 0px 6px 25px -10px rgba(33,33,33,1);
+	box-shadow: 0px 6px 25px -10px rgba(33,33,33,1);
+	border-radius:2%;
+}
+
+#main > h2 {
+	color: #061A40;
+	text-align: center;
+	font-weight: 900;
+	padding-top: 30px;
+}
+
+.main{
+	transition: margin-left 0.5s;
+	padding: 20px;
+	overflow: hidden;
+	width: 50%;
+	max-width: 1000px;
+	margin: auto;
+	margin-top: 4em;
+	margin-bottom: 8em;
+	-webkit-box-shadow: 0px 6px 25px -10px rgba(33,33,33,1);
+	-moz-box-shadow: 0px 6px 25px -10px rgba(33,33,33,1);
+	box-shadow: 0px 6px 25px -10px rgba(33,33,33,1);
+	border-radius:2%;
+}
+
+.main > h2 {
+	color: #061A40;
+	text-align: center;
+	font-weight: 900;
+	padding-top: 30px;
+}
+
+.formulario > div {
+	padding: 20px 0;
+	/*margin: 20px 0;*/
+}
+
+.form input[type=text],input[type=email],input[type=password], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.form label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+.formulario input[type="radio"]{
+	display: none;
+}
+
+.formulario .radio label {
+	color:#0074D9;
+	padding: 10px 15px 10px 40px;
+	margin: 10px 0px;
+	display: block;
+	position: relative;
+	font-size: 1em;
+	border-radius: 3px;
+	cursor: pointer;
+	-webkit-transition:all 0.3s ease;
+	-o-transition:all 0.3s ease;
+	transition:all 0.3s ease;
+}
+
+.formulario .radio label:hover{
+	background:rgba(0,116,217,0.1);
+}
+
+.formulario .radio label:before{
+	content: "";
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	background:none;
+	border: 2px solid #0074D9;
+	border-radius:10%;
+	position: absolute;
+	left: 14px;
+	top: 10px;
+}
+
+.formulario input[type="radio"]:checked + label{
+	padding: 10px 15px;
+	background:#0074D9;
+	border-radius:2px;
+	color: #fff; 
+}
+
+.formulario input[type="radio"]:checked + label:before{
+	display: none;
+}
+
+.btn{
+  background: #0074D9;
+  color: white;
+  text-decoration: none;
+  padding: 14px 28px;
+  display: inline-block;
+  border-radius: 8px;
+  transition: all .2s ease-in;
+  font-size: 16px;
+  font-weight: bold;
+
+}
+
+.btn:hover{
+  background: #1B7ADD;
+  cursor: pointer;
+}
+
+.footer {
+	background-color: #003559;
+	color: #fff;
+	height: 73px;
+	font-size: 20px;
+	text-align: center;
+	font-weight: 800;
+}
+
+.alert {
+padding: 8px 35px 8px 14px;
+margin-top: 15px;
+margin-bottom: 10px;
+color: #c09853;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+background-color: #fcf8e3;
+border: 1px solid #fbeed5;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+
+.alert-error {
+color: #b94a48;
+background-color: #f2dede;
+border-color: #eed3d7;
+}
+
+.alert-info {
+color: #3a87ad;
+background-color: #d9edf7;
+border-color: #bce8f1;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
