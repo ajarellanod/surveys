@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no">
-		<title>Registro</title>
+		<title>Registro de Usuario</title>
 		<link rel="stylesheet" href="/survey/views/static/css/style.css">
 	</head>
 	<body>
