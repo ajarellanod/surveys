@@ -170,7 +170,7 @@
 		}
 
 
-		public static function get_stats_answers($survey,$question,$answers){
+		public static function get_stats_answers($survey,$question){
 			$list = array();
 
 			$result_total = self::$con->query("SELECT COUNT(*) AS participantes FROM `elecciones` 
@@ -178,59 +178,17 @@
 			$total = $result_total->fetch_object();
 			$total = $total->participantes;
 
+
 			$result_total_answers = self::$con->query("SELECT respuesta, COUNT(respuesta) AS total 
 										FROM `elecciones` WHERE id_encuesta=$survey and  pregunta=$question 
 										GROUP BY pregunta, respuesta ORDER BY pregunta");
 
-			while($total_answers = $result_total_answers->fetch_object()){
-				$list[$total_answers->respuesta] = round($total_answers->total / $total, 2, PHP_ROUND_HALF_EVEN) * 100;
+			$total_answers = $result_total_answers->fetch_array();
+
+			for ($i=1; $i <= $total ; $i++) { 
+				echo "Respuesta " . $total_answers["respuesta"];
 			}
 
-			for ($i=1; $i <= $answers; $i++) {
-				if (!array_key_exists($i, $list)) {
-				    $list[$i] = 0; 
-				}
-			}
-
-			ksort($list);
-			return $list;
-
-		}
-
-		public static function get_survey_creator($id,$user){
-
-			$result = self::$con->query("SELECT * FROM `encuestas` WHERE id = '$id'");
-			if($result->num_rows <> 0){
-				$obj = $result->fetch_object();
-				if ($obj->creador == $user) {
-					return True;
-				}else{
-					return False;
-				}
-			}else{
-				return False;
-			}
-
-		}
-
-		public static function get_surveys_created($user){
-
-			$result = self::$con->query("SELECT * FROM `encuestas` WHERE creador = '$user'");
-			if($result->num_rows <> 0){
-				$surveys = array();
-				while($obj = $result->fetch_object()){
-					$surveys[$obj->id] = $obj->nombre_encuesta;
-				}
-				return $surveys;
-			}else{
-				return False;
-			}
-
-		}
-
-		public static function trash(){
-			self::$con->query("DELETE FROM `encuestas` WHERE id NOT IN 
-							(SELECT DISTINCT id_encuesta FROM `preguntas`)");
 		}
 
 

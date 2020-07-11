@@ -11,7 +11,7 @@
 			//Si esta logeado lo enviamos a Index
 			session_start();
 			if(isset($_SESSION["logged"])){
-				header('Location: /survey/index/');
+				echo"<script>window.location.href='/survey/index/';</script>";
 				exit();
 			}
 
@@ -32,7 +32,7 @@
 				session_start();
                 $_SESSION['logged'] = $user;
                 //Redirigimos a la pantalla que queremos
-                header('Location: /survey/index/');
+                echo"<script>window.location.href='/survey/index/';</script>";
         		exit();
 			}else{
 				//Enviamos Notificacion de Error

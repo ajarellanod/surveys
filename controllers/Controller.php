@@ -1,4 +1,5 @@
-<?php 
+<?php
+	require_once('./classes/Model.php'); 
 	/**
 	 * 
 	 */
@@ -14,17 +15,18 @@
 		public static function is_logged(){
 			session_start();
 		    if (!isset($_SESSION['logged'])) {
-		        header('Location: /survey');
+		    	echo"<script>window.location.href='/survey';</script>";
 		        exit();
 		    }
 		}
 
 		public static function valid_param($route, array $param = array()){
 			if(!isset($param[0]) && !isset($param[1])){
-				header("Location: /survey/index");
+				echo"<script>window.location.href='/survey/index';</script>";
 			}elseif (isset($param[0]) && !isset($param[1])) {
-				header("Location: /survey/$route/$param[0]/1");
+				echo"<script>window.location.href='/survey/$route/$param[0]/1';</script>";
 			}
 		}
+
 	}
 ?>

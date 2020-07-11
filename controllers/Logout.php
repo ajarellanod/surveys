@@ -10,7 +10,7 @@
 		    //Destruir Sesión
 		    session_destroy();
 		    //Redireccionar a login.php
-		    header("location: /survey");
+		    echo"<script>window.location.href='/survey';</script>";
 		}
 	}
 ?>

@@ -20,10 +20,8 @@
 
 			<ul class="navbar-nav">
 				<li><a href="/survey/logout/">&#128075;Cerrar Sesión</a></li>
+				<li><a href="/survey/history">&#128196;Resultados de Encuestas Creadas</a></li>
 				<li><a href="#" title="Usuario en Sesión">&#128102;<?php echo $_SESSION['logged']; ?></a></li>
-				<!-- <li><a href="#">Realizar Encuesta</a></li>
-				<li><a href="#">Crear Encuesta</a></li> 
-				<li><a href="#">&#128196;Historial de Encuestas Creadas</a></li>-->
 			</ul>
 			<!-- Encuestado -->
 		</nav>
@@ -34,12 +32,6 @@
 		  <div class="modal-content">
 		    <span class="close">&times;</span>
 		    <h2>Inicio de Encuesta</h2>
-			<?php 
-				//Mostrar Alert
-				if(isset($is_logged)){
-					echo '<div class="alert alert-error">Nombre de Usuario o Contraseña Erronea.</div>';
-				}
-			?>
 			<form action="/survey/index" method="post">
 				<div class="form">
 					
@@ -139,6 +131,13 @@
 
 		<div id="main">
 			<h2>Bienvenido a Survey's</h2>
+			<?php 
+				//Mostrar Alert
+				if(isset($id)){
+					echo "<div class='alert alert-info'>El Codigo de su Encuesta es $id - Tambien Puede 
+						<a href='/survey/survey/$id/1'>Ingresar Acá.</a> </div>";
+				}
+			?>
 			<br><hr>
 			<div style="margin:2em auto;width:75%;">
 				<a href="#" id="myBtn2" class="btn" style="padding:2em;">&#128221;Crear Encuesta</a>

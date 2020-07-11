@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no">
-		<title>Encuesta</title>
+		<title>Resultados de Encuesta</title>
 		<link rel="stylesheet" href="/survey/views/static/css/style.css">
 	</head>
 	<body>
@@ -22,6 +22,7 @@
 
 			<ul class="navbar-nav">
 				<li><a href="/survey/logout/">&#128075;Cerrar Sesión</a></li>
+				<li><a href="/survey/index" >🏠Inicio</a></li>
 				<li><a href="#" title="Usuario en Sesión">&#128102;<?php echo $_SESSION['logged']; ?></a></li>
 				<center><li><a href="#" title="Nombre de Encuesta">&#128209;<?php echo $survey; ?></a></li></center>
 			</ul>
@@ -47,27 +48,27 @@
 				if (isset($actual_question)) {
 					echo "<h2>$actual_question</h2>";
 				}
-
-				//Mostrar Alert
-				if($actual_question_id == 1 && !$with_election){
-					echo '<div class="alert alert-info">Debes Terminar la Encuesta para Volver al Inicio ó <a href="/survey/index">Devuelvete Aca.</a></div>';
-				}
-					
 			?>
 			<br><hr>
-			<form action="#" method="post" class="formulario">
+			<form action="#" method="post">
 				<div class="radio">
 					<?php
 						if (isset($answers)){
 							$cont_answers = 0;
 							foreach ($answers as $answer) {
 								$cont_answers = $cont_answers + 1;
-								if($with_election == $cont_answers){
-									echo '<input type="radio" checked name="answer" value="'.$cont_answers.'" id="x'.$cont_answers.'">';
-								}else{
-									echo '<input type="radio" name="answer" value="'.$cont_answers.'" id="x'.$cont_answers.'">';
-								}
-					 	 		echo '<label for="x'.$cont_answers.'">'.$answer.'</label>';
+								$show = $percentage[$cont_answers];
+								$width = ($show/2) + 40;
+								
+									echo "
+										<div class='myProgress'>
+										   	<div class='myBar' style='width:$width%'>$answer</div>
+										   	<p style='display:inline-block;margin-bottom=5px;'>
+										   		$show%
+										   	</p>
+										</div>
+									";
+	
 					 		}
 						}
 					?>
@@ -75,7 +76,7 @@
 				<?php
 					if (isset($questions)){
 						if (count($questions) == $actual_question_id){
-							echo '<input type="submit" name="boton" value="Terminar Encuesta" class="btn">';
+							echo '<input type="submit" name="boton" value="Salir de Encuesta" class="btn">';
 						}else{
 							echo '<input type="submit" name="boton" value="Siguiente" class="btn">';
 						}

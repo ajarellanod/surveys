@@ -9,6 +9,7 @@
 		public static function get(){
 			self::is_logged();
 			self::render('index');
+			Survey::trash();
 		}
 
 		public static function post(array $data = array())
@@ -17,7 +18,7 @@
 
 			if (isset($data["code"])) {
 				$code = $data["code"];
-				header("Location: /survey/survey/$code/1");
+				echo"<script>window.location.href='/survey/survey/$code/1';</script>";
 				exit();
 			}
 
@@ -54,10 +55,7 @@
 
 				$id = Survey::set_question_and_answers($question,$answers_c);
 
-				echo "<script type='text/javascript'>
-					        alert('El Codigo de Su Encuesta Es -> $id , Uselo para Ingresar');
-					        location = '/survey/index';
-					  </script>";
+				self::render('index', array('id' => $id));
 			}
 
 		}

@@ -299,3 +299,37 @@ border-color: #bce8f1;
   text-decoration: none;
   cursor: pointer;
 }
+
+.myBar {
+    height: 30px;
+    background-color:  #FCA311;
+    color: black;
+    display: inline-block;
+    border-radius: 2%;
+    text-align: center;
+    line-height: 30px;
+}
+
+.myProgress{
+    height: 30px;
+    background-color: rgba(217, 210, 0, 0.1);
+    border-radius: 2%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  font-size: 15px;
+}
+
+th,td {
+  height: 50px;
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover{
+	background-color: #f5f5f5;
+}

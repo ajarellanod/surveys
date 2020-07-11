@@ -24,6 +24,7 @@
 					$answers_p = Survey::get_answers_p();
 					self::$list["actual_question"] = $survey['Preguntas'][$param[1]-1]['Pregunta'];
 					self::$list["actual_question_id"] = $param[1];
+					
 					self::$list["with_election"] = Survey::get_election($_SESSION['logged'],
 																			 $param[0],
 																			 $param[1]);
@@ -69,7 +70,7 @@
 
 					Survey::set_elections($user,$survey,$question,$election);
 					$next_question = $param[1] + 1;
-					header("Location: /survey/survey/$survey/$next_question");
+					echo"<script>window.location.href='/survey/survey/$survey/$next_question';</script>";
 				}else{
 
 					Survey::set_elections($user,$survey,$question,$election);
